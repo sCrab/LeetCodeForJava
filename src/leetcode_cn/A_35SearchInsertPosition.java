@@ -12,12 +12,12 @@ public class A_35SearchInsertPosition {
         int[] nums = {1,3,5,6};
         int target = 2;
         System.out.println(a.searchInsert(nums, target));
+        System.out.println(5/2);
     }
     public int searchInsert(int[] nums, int target) {
         int lo = 0, hi = nums.length;
-        int mid;
-        while (lo <= hi) {
-            mid = lo + (hi - lo) / 2;
+        while (lo < hi) {
+            int mid = lo + (hi - lo) / 2;
             if (nums[mid]<target) lo = mid+1;
             else if (nums[mid]>target) hi = mid;
             else return mid;
