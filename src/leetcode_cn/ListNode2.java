@@ -6,11 +6,11 @@ package leetcode_cn;
  * @Date: 2019/4/18 11:32
  * @Modified By:
  */
-public class Node {
+public class ListNode2 {
     int val;
-    public Node next;
+    public ListNode2 next;
 
-    public Node(int x) {
+    public ListNode2(int x) {
         this.val = x;
     }
 }

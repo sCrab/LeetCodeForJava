@@ -1,19 +1,17 @@
 package leetcode_cn;
 
-import java.io.BufferedReader;
 import java.io.IOException;
-import java.io.InputStreamReader;
 
 class Solution {
-    public ListNode addTwoNumbers(ListNode l1, ListNode l2) {
-        ListNode l = l1;
+    public ListNode2 addTwoNumbers(ListNode2 l1, ListNode2 l2) {
+        ListNode2 l = l1;
         while (l1 != null) {
             l1.val += l2.val;
             if (l1.val >= 10) {
                 l1.val %= 10;
                 if (l1.next==null){
-                    l1.next = new ListNode(0);
-                    l2.next = new ListNode(0);
+                    l1.next = new ListNode2(0);
+                    l2.next = new ListNode2(0);
                 }
                 l1.next.val += 1;
             }
@@ -26,7 +24,7 @@ class Solution {
 
 class ListNode {
       int val;
-      ListNode next;
+      ListNode2 next;
      ListNode(int x) { val = x; }
   }
 
@@ -47,21 +45,21 @@ public class MainClass {
         return output;
     }
 
-    public static ListNode stringToListNode(String input) {
+    public static ListNode2 stringToListNode(String input) {
         // Generate array from the input
         int[] nodeValues = stringToIntegerArray(input);
 
         // Now convert that list into linked list
-        ListNode dummyRoot = new ListNode(0);
-        ListNode ptr = dummyRoot;
+        ListNode2 dummyRoot = new ListNode2(0);
+        ListNode2 ptr = dummyRoot;
         for(int item : nodeValues) {
-            ptr.next = new ListNode(item);
+            ptr.next = new ListNode2(item);
             ptr = ptr.next;
         }
         return dummyRoot.next;
     }
 
-    public static String listNodeToString(ListNode node) {
+    public static String listNodeToString(ListNode2 node) {
         if (node == null) {
             return "[]";
         }
@@ -76,10 +74,10 @@ public class MainClass {
 
     public static void main(String[] args) throws IOException {
         String line;
-            ListNode l1 = stringToListNode("");
-            ListNode l2 = stringToListNode("");
+            ListNode2 l1 = stringToListNode("");
+            ListNode2 l2 = stringToListNode("");
 
-            ListNode ret = new Solution().addTwoNumbers(l1, l2);
+            ListNode2 ret = new Solution().addTwoNumbers(l1, l2);
 
             String out = listNodeToString(ret);
 
