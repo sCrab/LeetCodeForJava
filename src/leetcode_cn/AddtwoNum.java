@@ -1,6 +1,8 @@
 package leetcode_cn;
 
 
+import util.ListNode;
+
 public class AddtwoNum {
     public static void main(String[] args) {
     }
