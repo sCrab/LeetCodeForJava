@@ -8,10 +8,10 @@ public class A_21MergeTwoSortedLists {
 
     }
 
-    public ListNode mergeTwoLists(ListNode l1, ListNode l2) {
+    public ListNode2 mergeTwoLists(ListNode2 l1, ListNode2 l2) {
         if (l1 == null) return l2;
         if (l2 == null) return l1;
-        ListNode curr;
+        ListNode2 curr;
         if (l1.val <= l2.val) {
             curr = l1;
             curr.next = mergeTwoLists(l1.next, l2);
@@ -22,9 +22,9 @@ public class A_21MergeTwoSortedLists {
         return curr;
     }
 
-    public ListNode mergeTwoList(ListNode l1, ListNode l2) {
-        ListNode head = new ListNode(0);
-        ListNode curr = head;
+    public ListNode2 mergeTwoList(ListNode2 l1, ListNode2 l2) {
+        ListNode2 head = new ListNode2(0);
+        ListNode2 curr = head;
         while (l1 != null && l2 != null) {
             if (l1.val <= l2.val) {
                 curr.next = l1;
